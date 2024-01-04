@@ -6,9 +6,9 @@ The application is mainly divided into three components - db, backend and fronte
 
 2. For backend, nodejs container providing REST APIs to interact with the db and frontend.
     - Run below commands to initialize backend component
-        1. npm init  #initialising nodejs project
-        2. npm i express prisma @prisma/client
-        3. npx prisma init     #initialize prisma
+        1. `npm init`  #initialising nodejs project
+        2. `npm i express prisma @prisma/client`
+        3. `npx prisma init`     #initialize prisma
             This command will create a `schema.prisma` file inside `prisma` folder.
             Add User model in `schema.prisma` file.
     - To test the application, without frontend, run below commands.
