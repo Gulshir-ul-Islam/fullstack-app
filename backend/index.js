@@ -80,9 +80,13 @@ app.post('/users', async (req,res) => {
 //update user
 app.put('/users/:id', async (req,res) => {
     try{
-        const user = await prisma.user.delete({
+        const user = await prisma.user.update({
             where:{
                 id: Number(req.params.id)
+            },
+            data: {
+                name: req.body.name,
+                email: req.body.email
             }
         });
         res.status(200).json(user);
@@ -97,12 +101,12 @@ app.put('/users/:id', async (req,res) => {
 //delete user
 app.delete('/users/:id', async (req,res) => {
     try{
-        const users = await prisma.user.findUnique({
+        const user = await prisma.user.delete({
             where:{
                 id: Number(req.params.id)
             }
         });
-        res.status(200).json(users);
+        res.status(200).json(user);
     }
     catch(err){
         res.status(500).json({
