@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import CardComponent from '../components/CardComponent';
+import CardComponent from '../components/cardComponent';
 
 interface User {
   id: number;
